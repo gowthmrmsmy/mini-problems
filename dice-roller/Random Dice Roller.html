@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+
+    <p class="display-dice"></p>
+    <button class="dice">Roll Dice</button>
+
+    <script>
+
+      let dice1 ;
+      let dice2 ;
+      let sumofSeven = 0;
+
+
+      document.querySelector('.dice').addEventListener('click', ()=>{ createRandom()})
+    
+
+      let createRandom = () =>
+    {
+
+      dice1 = Math.floor(Math.random()*6)+1;
+      dice2 = Math.floor(Math.random()*6)+1;
+      console.log(`The First Dice Value : ${dice1}`);
+      console.log(`The Second Dice Value: ${dice2}`);
+      
+      
+      let sum = dice1 + dice2;
+      console.log(sum);
+
+      validateSum(sum);
+      displayResult(sum)
+      
+    };
+    
+
+    let validateSum = (sum) => {
+
+      if(sum === 7)
+    {
+      sumofSeven++;
+      
+
+    }
+  };
+
+    let displayResult = () => {
+
+      
+      document.querySelector('.display-dice').innerHTML = `Sum of Seven: ${sumofSeven}`;
+
+    
+    }
+
+    </script>
+  </body>
+</html>
